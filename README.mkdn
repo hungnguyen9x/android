@@ -1,14 +1,14 @@
-Kernel (Zenfone 5)
-==================
+Kernel (Zenfone 5) [PRIVATE]
+============================
 
 Getting Started
 ---------------
 
 To initialize your local repository using the kernel trees, use a command like this:
 
-    repo init -u git://github.com/zf5/android.git -b kernel
+    repo init -u git://github.com/zf5/android.git -b kernel-private
 
-Then to sync up:
+Then to sync up (you'll need your SSH key set up for that!):
 
     repo sync -c -j16
 
@@ -26,12 +26,8 @@ so all you need to do is build it.
 
     lunch mini_T00F-user
 
-    make -j16 minigzip openssl
+    make -j16 minigzip
 
-    make -f KernelMakefile -j16 TARGET_DEVICE=hd build_kernel
-
-    make -f KernelMakefile -j16 TARGET_DEVICE=hd modules_install
-
-    make -f KernelMakefile -j16 TARGET_DEVICE=hd copy_modules_to_root
+    make -f KernelMakefile -j16 copy_modules_to_root
 
 Please see the [CyanogenMod Wiki](http://wiki.cyanogenmod.org/) or [Android Docs](https://source.android.com/source/building.html) for more building instructions.
